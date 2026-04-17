@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bru4v0xxt3b3o"]
+
+[ext_resource type="Script" uid="uid://c2f6e4fr4rlgl" path="res://scenes/props/InfoSign.gd" id="1_script"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
+size = Vector2(32, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_interact"]
+size = Vector2(100, 100)
+
+[node name="InfoSign" type="StaticBody2D" unique_id=2118887630]
+script = ExtResource("1_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1655076407]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1278716177]
+shape = SubResource("RectangleShape2D_body")
+
+[node name="InteractZone" type="Area2D" parent="." unique_id=730894031]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone" unique_id=1946607255]
+shape = SubResource("RectangleShape2D_interact")

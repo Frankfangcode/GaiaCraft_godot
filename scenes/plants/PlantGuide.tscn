@@ -1,0 +1,20 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scenes/plants/PlantGuide.gd" id="1_script"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_interact"]
+radius = 40.0
+
+[node name="PlantGuide" type="Area2D"]
+collision_layer = 0
+collision_mask = 1
+script = ExtResource("1_script")
+icon_frame = 4
+plant_name = "咖啡樹"
+plant_description = "這是政大校園引進的實驗作物，產出的咖啡豆帶有獨特的文山風味。"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_interact")

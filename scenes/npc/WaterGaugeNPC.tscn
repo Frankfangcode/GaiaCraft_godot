@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://d151k4fnltgdr"]
+
+[ext_resource type="Script" uid="uid://bb7qt5uh871dw" path="res://scenes/npc/WaterGaugeNPC.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://dlitkhfsis43k" path="res://assets/tilesets/WaterGauge.png" id="2_texture"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_interact"]
+size = Vector2(20.98089, 36.82424)
+
+[node name="WaterGaugeNPC" type="StaticBody2D" unique_id=945764212]
+script = ExtResource("1_script")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1056072551]
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("2_texture")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2091022103]
+shape = SubResource("RectangleShape2D_body")
+
+[node name="InteractZone" type="Area2D" parent="." unique_id=833963437]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractZone" unique_id=1326635032]
+rotation = 3.1415925
+scale = Vector2(1.3457963, 0.71638113)
+shape = SubResource("RectangleShape2D_interact")

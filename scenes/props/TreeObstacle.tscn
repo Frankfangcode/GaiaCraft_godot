@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b02f0mau7w1c3"]
+
+[ext_resource type="Texture2D" uid="uid://qb31vx4gqq7e" path="res://assets/tilesets/Modern_Farm_v1/16x16/5_Fruit_Trees.png" id="1_tex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_body"]
+size = Vector2(20, 10)
+
+[node name="TreeObstacle" type="StaticBody2D" unique_id=1061464389]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1924375970]
+texture = ExtResource("1_tex")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 80, 128)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1081596261]
+position = Vector2(40, 122)
+shape = SubResource("RectangleShape2D_body")

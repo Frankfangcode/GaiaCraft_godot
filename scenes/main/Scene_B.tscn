@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bpsvykq2vdsjf"]
+
+[ext_resource type="PackedScene" uid="uid://bplayer001" path="res://scenes/player/Player.tscn" id="1_player"]
+[ext_resource type="Texture2D" uid="uid://cux4x4mipaa55" path="res://assets/maps/bluemap 2.png" id="2_map"]
+[ext_resource type="Script" uid="uid://wgjt8m4t6kft" path="res://scenes/main/Scene_B.gd" id="3_script"]
+[ext_resource type="PackedScene" path="res://scenes/teleport/TeleportPoint.tscn" id="4_tp"]
+
+[node name="SceneB" type="Node2D" unique_id=1111406973]
+y_sort_enabled = true
+position = Vector2(181, -83)
+script = ExtResource("3_script")
+
+[node name="MapBackground" type="Sprite2D" parent="." unique_id=668445474]
+z_index = -10
+texture_filter = 1
+position = Vector2(-221, 54)
+scale = Vector2(1.4375, 1.4375)
+texture = ExtResource("2_map")
+centered = false
+
+[node name="Player" parent="." unique_id=329589743 instance=ExtResource("1_player")]
+position = Vector2(-183, 490)
+scale = Vector2(2.445221, 2.4442732)
+
+[node name="TeleportToA" parent="." unique_id=1612110408 instance=ExtResource("4_tp")]
+position = Vector2(171, 210)
+scale = Vector2(1, 0.9476639)
+target_scene_path = "res://scenes/main/Scene_A.tscn"
+spawn_location = Vector2(1040, 416)
+
+[node name="TeleportToTown" parent="." unique_id=1667942078 instance=ExtResource("4_tp")]
+position = Vector2(280, 487)
+target_scene_path = "res://scenes/main/TownMapScene.tscn"
+spawn_location = Vector2(48, 500)

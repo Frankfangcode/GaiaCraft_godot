@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://copeg5ffdngw4"]
+
+[ext_resource type="Texture2D" uid="uid://bu6huvtrlfmxe" path="res://assets/tilesets/FoodCart.png" id="1_tex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_col"]
+size = Vector2(127.5, 50)
+
+[node name="FoodCart" type="StaticBody2D" unique_id=2045854405]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1567300831]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_tex")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1095008841]
+position = Vector2(1, 23)
+shape = SubResource("RectangleShape2D_col")

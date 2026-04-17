@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://d4k3c7r2dfldb"]
+
+[ext_resource type="PackedScene" uid="uid://bplayer001" path="res://scenes/player/Player.tscn" id="1_player"]
+[ext_resource type="Texture2D" uid="uid://0jdpo1o36b4m" path="res://assets/maps/bluemap.png" id="2_map"]
+[ext_resource type="Script" uid="uid://duhhohq76lvf0" path="res://scenes/main/Scene_A.gd" id="3_script"]
+[ext_resource type="PackedScene" path="res://scenes/npc/GuardNPC.tscn" id="4_guard"]
+[ext_resource type="PackedScene" path="res://scenes/teleport/TeleportPoint.tscn" id="5_tp"]
+
+[node name="SceneA" type="Node2D" unique_id=476318618]
+y_sort_enabled = true
+script = ExtResource("3_script")
+
+[node name="MapBackground" type="Sprite2D" parent="." unique_id=1986490435]
+z_index = -10
+texture_filter = 1
+texture = ExtResource("2_map")
+centered = false
+
+[node name="Player" parent="." unique_id=577903729 instance=ExtResource("1_player")]
+position = Vector2(469.00006, 609)
+scale = Vector2(2.8000276, 2.783803)
+
+[node name="GuardNPC" parent="." unique_id=2099869019 instance=ExtResource("4_guard")]
+position = Vector2(350.99997, 601)
+scale = Vector2(2.4504511, 2.4458668)
+
+[node name="TeleportToB" parent="." unique_id=349212512 instance=ExtResource("5_tp")]
+position = Vector2(1070, 600)
+target_scene_path = "res://scenes/main/Scene_B.tscn"
+spawn_location = Vector2(48, 176)
+
+[node name="TeleportToMain" parent="." unique_id=1853394201 instance=ExtResource("5_tp")]
+position = Vector2(16, 600)
+target_scene_path = "res://scenes/main/Main.tscn"
+spawn_location = Vector2(700, 559)

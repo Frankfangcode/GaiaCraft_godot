@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://iw168760gkng"]
+
+[ext_resource type="PackedScene" uid="uid://bplayer001" path="res://scenes/player/Player.tscn" id="1_player"]
+[ext_resource type="Texture2D" uid="uid://c2d5u742n12dw" path="res://assets/maps/NCCUmap.webp" id="2_map"]
+[ext_resource type="Script" uid="uid://b6bbqeyl1fol0" path="res://scenes/main/Main.gd" id="3_script"]
+[ext_resource type="PackedScene" path="res://scenes/npc/GuardNPC.tscn" id="4_guard"]
+[ext_resource type="PackedScene" path="res://scenes/teleport/TeleportPoint.tscn" id="5_tp"]
+[ext_resource type="PackedScene" path="res://scenes/items/PickupItem.tscn" id="6_pickup"]
+[ext_resource type="PackedScene" path="res://scenes/plants/PlantGuide.tscn" id="7_plant"]
+
+[node name="Main" type="Node2D" unique_id=709222404]
+y_sort_enabled = true
+scale = Vector2(1.0162326, 1.0152708)
+script = ExtResource("3_script")
+
+[node name="MapBackground" type="Sprite2D" parent="." unique_id=2103612266]
+z_index = -10
+texture = ExtResource("2_map")
+centered = false
+
+[node name="Player" parent="." unique_id=1339773585 instance=ExtResource("1_player")]
+position = Vector2(646, 559)
+scale = Vector2(2.5734174, 2.5705717)
+
+[node name="GuardNPC" parent="." unique_id=1969547647 instance=ExtResource("4_guard")]
+position = Vector2(907.2727, 890.4029)
+scale = Vector2(2.2341065, 2.0305574)
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=1572337914]
+
+[node name="SampleCollision" type="CollisionPolygon2D" parent="Walls" unique_id=433087026]
+polygon = PackedVector2Array(300, 200, 428, 200, 428, 328, 300, 328)
+
+[node name="TeleportToA" parent="." unique_id=313650193 instance=ExtResource("5_tp")]
+position = Vector2(707.51514, 294.5027)
+scale = Vector2(2.827484, 0.6440053)
+target_scene_path = "res://scenes/main/Scene_A.tscn"
+spawn_location = Vector2(48, 600)
+
+[node name="StudentID" parent="." unique_id=1085929090 instance=ExtResource("6_pickup")]
+position = Vector2(723.25964, 525.968)
+scale = Vector2(1.1107839, 1.1107839)
+item_name = "Student_ID"
+
+[node name="CoffeePlant" parent="." unique_id=1588971408 instance=ExtResource("7_plant")]
+position = Vector2(602.22437, 878.58325)
+scale = Vector2(1.6074269, 1.6074269)
+
+[node name="CottonPlant" parent="." unique_id=2076938048 instance=ExtResource("7_plant")]
+position = Vector2(790.1735, 871.6886)
+scale = Vector2(1.2236643, 1.2236643)
+icon_frame = 3
+plant_name = "棉花"
+plant_description = "柔軟的棉花球在陽光下閃閃發亮，是農學院的教學作物之一。"
+
+[node name="ApplePlant" parent="." unique_id=652480349 instance=ExtResource("7_plant")]
+position = Vector2(895.4643, 629.3887)
+scale = Vector2(1.3778523, 1.3778523)
+icon_frame = 0
+plant_name = "蘋果樹"
+plant_description = "校園角落的蘋果樹，據說是創校時期種下的，每年秋天結出酸甜的果實。"

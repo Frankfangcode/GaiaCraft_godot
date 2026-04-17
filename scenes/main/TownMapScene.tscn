@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://33wvudbbj4cx"]
+
+[ext_resource type="PackedScene" uid="uid://bplayer001" path="res://scenes/player/Player.tscn" id="1_player"]
+[ext_resource type="Texture2D" uid="uid://dr2rjuui7nwvf" path="res://assets/maps/TownMap.jpeg" id="2_map"]
+[ext_resource type="PackedScene" path="res://scenes/items/PickupItem.tscn" id="3_pickup"]
+[ext_resource type="Script" uid="uid://dnjkncgqt0wes" path="res://scenes/main/TownMapScene.gd" id="4_script"]
+[ext_resource type="PackedScene" path="res://scenes/plants/PlantGuide.tscn" id="6_info"]
+[ext_resource type="PackedScene" uid="uid://ykgs7nakronn" path="res://scenes/npc/GrandpaNPC.tscn" id="7_grandpa"]
+[ext_resource type="PackedScene" uid="uid://b1vmplgrjeuxp" path="res://scenes/npc/CocoNPC.tscn" id="8_coco"]
+[ext_resource type="PackedScene" uid="uid://d151k4fnltgdr" path="res://scenes/npc/WaterGaugeNPC.tscn" id="9_gauge"]
+[ext_resource type="PackedScene" path="res://scenes/props/SchoolSign.tscn" id="10_sign"]
+[ext_resource type="PackedScene" uid="uid://b02f0mau7w1c3" path="res://scenes/props/TreeObstacle.tscn" id="11_tree"]
+[ext_resource type="PackedScene" uid="uid://copeg5ffdngw4" path="res://scenes/props/FoodCart.tscn" id="12_cart"]
+
+[node name="TownMapScene" type="Node2D" unique_id=1856397463]
+y_sort_enabled = true
+script = ExtResource("4_script")
+
+[node name="MapBackground" type="Sprite2D" parent="." unique_id=2101256985]
+z_index = -10
+texture_filter = 1
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_map")
+centered = false
+
+[node name="Player" parent="." unique_id=1211361317 instance=ExtResource("1_player")]
+position = Vector2(378, 694)
+scale = Vector2(2.5, 2.5)
+
+[node name="Grandpa" parent="." unique_id=100000001 instance=ExtResource("7_grandpa")]
+position = Vector2(471, 374.00006)
+scale = Vector2(2.5, 2.5)
+
+[node name="Coco" parent="." unique_id=100000002 instance=ExtResource("8_coco")]
+position = Vector2(469.00003, 699)
+rotation = 1.8963324
+scale = Vector2(-2.8206325, -2.8279886)
+
+[node name="StudentID" parent="." unique_id=653469270 instance=ExtResource("3_pickup")]
+position = Vector2(1138, 366)
+scale = Vector2(1.2, 1.2)
+item_name = "Student_ID"
+
+[node name="Info_TeaTerrace" parent="." unique_id=323150441 instance=ExtResource("6_info")]
+position = Vector2(630, 367)
+scale = Vector2(1.5, 1.5)
+plant_name = "茶梯田"
+plant_description = "這裡曾有台灣第一座製茶示範工廠，文山包種茶冠軍就出自這裡。民國64年全國競賽，石碇茶農大獲全勝。"
+
+[node name="Info_School" parent="." unique_id=483901000 instance=ExtResource("10_sign")]
+position = Vector2(708, 187)
+scale = Vector2(0.28264666, 0.3011016)
+sign_title = "永安國小"
+sign_description = "1997年停招，最後一屆只有7個學生。
+碧山村消失後，孩子的笑聲也跟著沉入水底。"
+
+[node name="WaterGauge" parent="." unique_id=390306319 instance=ExtResource("9_gauge")]
+position = Vector2(120.000015, 580.00006)
+scale = Vector2(2.5, 2.5)
+
+[node name="Tree_01" parent="." unique_id=2107488293 instance=ExtResource("11_tree")]
+visible = false
+position = Vector2(320, 300)
+scale = Vector2(2, 2)
+
+[node name="Tree_02" parent="." unique_id=89381894 instance=ExtResource("11_tree")]
+visible = false
+position = Vector2(500, 250)
+scale = Vector2(2, 2)
+
+[node name="Tree_03" parent="." unique_id=133365488 instance=ExtResource("11_tree")]
+visible = false
+position = Vector2(903, 267)
+scale = Vector2(2, 2)
+
+[node name="Tree_04" parent="." unique_id=135073001 instance=ExtResource("11_tree")]
+visible = false
+position = Vector2(900, 350)
+scale = Vector2(2, 2)
+
+[node name="Tree_05" parent="." unique_id=171950455 instance=ExtResource("11_tree")]
+visible = false
+position = Vector2(1100, 500)
+scale = Vector2(2, 2)
+
+[node name="Tree_06" parent="." unique_id=1452504964 instance=ExtResource("11_tree")]
+visible = false
+position = Vector2(200, 480)
+scale = Vector2(2, 2)
+
+[node name="FoodCart" parent="." unique_id=675033357 instance=ExtResource("12_cart")]
+position = Vector2(1365, 198)
+scale = Vector2(1.2172873, 1.2172873)
